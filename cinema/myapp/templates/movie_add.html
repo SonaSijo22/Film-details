@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+    body{
+        background:linear-gradient(to right bottom, #A9C9FF 0%, #FFBBEC 100%); 
+        background-repeat: no-repeat;
+        background-size: 100% 800px;
+        background-attachment: fixed;
+    }
+    form{
+        background-color: white;
+    }
+</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <h1 class="text-center fw-bolder mt-5">Add New Movie</h1>
+    <div class="container">
+        <div class="row">
+           <div class="col-3"></div>
+           <div class="col-6">
+            <form action=""  class="p-3 border border-4 shadow" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                
+                {% for field in form %}
+               <div class="mb-3">
+                {{field.label_tag}}
+                {{field}}
+               </div>
+               {%endfor%}
+                <button type="submit" class="btn btn-primary">add</button>
+
+              <!-- <div class="mb-3">
+                <label  for="">Title</label>
+                <input class="form-control" type="text"placeholder="enter title" name="title">
+              </div>
+    
+                <div class="mb-3">
+                    <label for="">Director</label>
+                <input class="form-control" type="text" placeholder="enter director" name="director">
+                </div>
+    
+                <div class="mb-3">
+                    <label for="">Year</label>
+                <input class="form-control" type="text" placeholder="enter year" name="year">
+                </div>
+                
+               <div class="mb-3">
+                <label for="">Geners</label>
+                <input class="form-control" type="text" placeholder="enter geners" name="geners">
+               
+               </div>
+               <div class="mb-3">
+                <label for="">Poster</label>
+                <input class="form-control" type="file" accept="image/*"  name="poster">
+               </div>
+    
+                <div class="mb-3">
+                    <label for="">Actors</label>
+                <input class="form-control" type="text" placeholder="enter actors" name="actors">
+    
+                </div>
+                
+               <div class="mb-3">
+                <label for="">Runtime</label>
+                <input class="form-control" type="number" placeholder="" name="run_time">
+               </div>
+    
+                <div class="mb-3">
+                    <label for="">Description</label>
+                <input class="form-control" type="text" placeholder="" name="description">
+                </div>
+    
+               <div class="mb-3">
+                <label for="">Writers</label>
+                <input class="form-control" type="text" placeholder="" name="writers">
+                
+               </div>
+               <div class="mb-3">
+                <label for="">Language</label>
+                <input class="form-control" type="text" placeholder="" name="language">
+    
+               </div>
+               <div class="mb-3">
+                <input type="submit" class="btn btn-info form-control">
+               </div> -->
+            </form>
+           </div>
+           <div class="col-3"></div>
+        </div>
+       
+
+    </div>
+   
+</body>
+</html>

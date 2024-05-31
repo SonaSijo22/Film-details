@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <style>
+  body{
+    background:linear-gradient(to right bottom, #A9C9FF 0%, #FFBBEC 100%); 
+    background-repeat: no-repeat;
+    background-size: 100% 800px;
+    background-attachment: fixed;
+
+  }
+  .img{
+    background-color: white;
+    height: 380px;
+    width: 255px;
+    margin-top: 50px;
+    margin-left: 25px;
+  }
+  .fa-trash{
+    color: black;
+    margin-top: 5px;
+  }
+  .fa-eye{
+    color: black;
+  }
+  .fa-square-plus{
+    font-size: 50px;
+    margin-top: 240px;
+    margin-left: 1400px;
+  }
+  
+ </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://kit.fontawesome.com/bbe69a7d3a.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <div class="container" id="c1">
+    <div class="row">
+      <center><h1><u>Movie List</u></h1></center>
+      {%for m in data%}
+      <div class="container" style="float: left; margin-left: 50px;">
+        <div class="img" >
+          <a href="{% url 'movie-detail' m.id%}">
+            <img src="{{m.poster.url}}" alt="Snow" height="320px" width="255px" >
+          </a>
+        <center><div class="centered" style="color: black; font-size: 15px;">
+          <b>{{m.title}}</b> <br>
+          <a href="{%url 'movie-delete' m.id %}"><i class="fa-solid fa-trash"></i></a>
+        <a href="{%url 'movie-update' m.id %}"><i class="fa-solid fa-eye"></i></a>
+        </div></center>
+      </div>
+      </div>
+      {%endfor%}
+    </div>
+   <a href="{% url 'movie-add'%}"> <i class="fa-solid fa-square-plus"></i></a>
+  </div>
+  
+  <!-- {{data}} -->
+   <!--empty qs varum-->
+</body>
+</html>
